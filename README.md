@@ -49,9 +49,6 @@ Pastikan file data sudah tersedia di storage/data/.
 
 Jalankan Laravel:
 
-bash
-Copy
-Edit
 php artisan serve
 Akses aplikasi melalui browser: http://localhost:8000
 
