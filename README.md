@@ -1,11 +1,11 @@
-📊 Aplikasi Dashboard Penjualan
+## 📊 Aplikasi Dashboard Penjualan
 Aplikasi ini merupakan sistem dashboard berbasis Laravel yang menampilkan data penjualan produk, produk terlaris per kategori, dan grafik tren penjualan untuk membantu analisis performa penjualan.
 
 🔧 Fitur Utama
-📦 Manajemen Data Produk & Penjualan
+### 📦 Manajemen Data Produk & Penjualan
 Menyimpan data produk, kategori, dan transaksi penjualan dalam file JSON (produk.txt, kategori.txt, penjualan.txt).
 
-📈 Dashboard Ringkasan
+### 📈 Dashboard Ringkasan
 Menampilkan:
 
 Total produk terjual bulan ini
@@ -16,7 +16,7 @@ Grafik penjualan produk berdasarkan bulan yang dipilih
 
 Grafik total penjualan selama 6 bulan terakhir (1 bar = 1 bulan)
 
-🥇 Status Penjualan Produk
+### 🥇 Status Penjualan Produk
 Klasifikasi status performa penjualan berdasarkan total nilai penjualan:
 
 ≥ 100 juta: Tinggi
@@ -32,10 +32,10 @@ Klasifikasi status performa penjualan berdasarkan total nilai penjualan:
 🔍 DataTable Interaktif
 Semua tabel menggunakan DataTable dengan fitur pencarian dan sortir otomatis.
 
-📅 Filter Penjualan Bulanan
+### 📅 Filter Penjualan Bulanan
 Tersedia input bulan untuk menyaring grafik produk terlaris berdasarkan bulan tertentu.
 
-🗂️ Struktur File Data
+### 🗂️ Struktur File Data
 Semua data disimpan dalam direktori storage/data/:
 
 produk.txt → Data produk (nama_produk, nama_kategori, harga)
@@ -44,20 +44,23 @@ kategori.txt → Data kategori produk
 
 penjualan.txt → Data transaksi penjualan (tanggal_transaksi, nama_produk, item_terjual, total_penjualan)
 
-💡 Cara Menjalankan
+### 💡 Cara Menjalankan
 Pastikan file data sudah tersedia di storage/data/.
 
 Jalankan Laravel:
 
+bash
+Copy
+Edit
 php artisan serve
 Akses aplikasi melalui browser: http://localhost:8000
 
-📦 Tools yang Digunakan
+### 📦 Tools yang Digunakan
 Laravel 10+
 
 Blade Template
 
-Bootstrap 4/5 (untuk tampilan)
+Bootstrap 4 (untuk tampilan)
 
 Chart.js (untuk visualisasi data)
 
