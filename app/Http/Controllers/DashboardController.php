@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class DashboardController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Menampilkan halaman dashboard / beranda
      */
     public function index(Request $request)
     {
@@ -20,7 +20,7 @@ class DashboardController extends Controller
         $products = Storage::exists('data/produk.txt') ? json_decode(Storage::get('data/produk.txt'), true) : [];
         $categories = Storage::exists('data/kategori.txt') ? json_decode(Storage::get('data/kategori.txt'), true) : [];
 
-        // Hitung total item terjual bulan ini
+        // Menghitung total item terjual bulan ini
         $now = Carbon::now();
         $totalSoldItems = 0;
 
@@ -89,6 +89,7 @@ class DashboardController extends Controller
         arsort($monthlySales);
         $chartLabels = array_keys($monthlySales);
         $chartData = array_values($monthlySales);
+        // ========== END OF CHART: Filter Berdasarkan Bulan Dipilih ==========
 
         // ========== CHART: Produk Terlaris 6 Bulan Terakhir ==========
         $sixMonthsAgo = Carbon::now()->subMonths(5)->startOfMonth();
@@ -109,6 +110,7 @@ class DashboardController extends Controller
         arsort($salesLast6Months);
         $chartLabels6Months = array_keys($salesLast6Months);
         $chartData6Months = array_values($salesLast6Months);
+        // ========== END OF CHART: Produk Terlaris 6 Bulan Terakhir ==========
 
         // ========== TABEL: Penjualan dan Status Produk ==========
         $productRevenueStatus = [];
@@ -149,6 +151,8 @@ class DashboardController extends Controller
                 return $b['total_penjualan'] <=> $a['total_penjualan'];
             });
         }
+        // ========== END OF TABEL: Penjualan dan Status Produk ==========
+        
 
         // ========== CHART: Total Penjualan per Bulan 6 Bulan Terakhir ==========
         $monthlyTotalSales = [];
@@ -171,6 +175,8 @@ class DashboardController extends Controller
 
         $labels6MonthsBars = array_keys($monthlyTotalSales);
         $data6MonthsBars = array_values($monthlyTotalSales);
+        // ==========  END OF CHART: Total Penjualan per Bulan 6 Bulan Terakhir ==========
+
 
         return view(
             'index',

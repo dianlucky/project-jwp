@@ -151,7 +151,8 @@
                                                                 class="btn btn-raised btn-secondary w-50 mx-1"
                                                                 data-dismiss="modal">Batal</button>
                                                             <button type="submit"
-                                                                class="btn btn-raised btn-danger w-50 mx-1">Ya! Hapus</button>
+                                                                class="btn btn-raised btn-danger w-50 mx-1">Ya!
+                                                                Hapus</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -235,4 +236,11 @@
             </div> <!-- end row -->
         </div>
     </div>
+    <style>
+        .dataTables_filter input {
+            color: #000 !important;
+            background-color: #fff !important;
+            border: 1px solid #ccc;
+        }
+    </style>
 @endsection

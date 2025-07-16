@@ -295,4 +295,11 @@
             });
         });
     </script>
+    <style>
+        .dataTables_filter input {
+            color: #000 !important;
+            background-color: #fff !important;
+            border: 1px solid #ccc;
+        }
+    </style>
 @endsection

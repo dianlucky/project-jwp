@@ -45,6 +45,7 @@ class CategoryController extends Controller
         $filePath = 'data/kategori.txt';
         $categories = Storage::exists($filePath) ? json_decode(Storage::get($filePath), true) : [];
 
+        // jika kategori tidak ditemukan
         if (!isset($categories[$index])) {
             abort(404, 'Data tidak ditemukan');
         }
